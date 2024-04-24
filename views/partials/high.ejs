@@ -1,0 +1,11 @@
+<div class="card border-danger m-2" style="width: 22rem;">
+    <div class="card-body">
+        <h5 class="card-title text-capitalize"><%= issue.description %> <%- (issue.state).readInt8() == 1 ? `<i class="bi bi-envelope-open"></i>` : `<i class="bi bi-envelope-check-fill"></i>` %> </h5>
+        <h6 class="card-subtitle mb-2 text-muted">Assigned to <%= issue.techname %></h6>
+        <p class="card-text"><%= issue.info %></p>
+        <button class="btn btn-primary mt-3"  type="button" onclick="changeTicket (`<%= issue.id %>`)"><%= (issue.state).readInt8() == 1 ? 'Close' : 'Open' %></button>
+        <button class="btn btn-danger mt-3" type="button" onclick = "deleteTicket(`<%= issue.id %>`)">Delete</button><br>
+        <small class="text-muted">Ticket ID: <%= issue.id %></small>
+
+    </div>
+  </div>
